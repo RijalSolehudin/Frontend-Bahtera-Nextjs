@@ -2,7 +2,12 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0f172a; /* updated for better contrast and consistency */
+
+  /* Project palette */
+  --color-primary: #013963; /* primary */
+  --color-secondary: #e6e68a; /* secondary */
+  --color-neutral: #e6eef7; /* neutral */
 }
 
 @theme inline {
@@ -19,8 +24,35 @@
   }
 }
 
+/* Minimal skeleton helper */
+.skeleton {
+  @apply bg-slate-200 dark:bg-slate-700 rounded-md;
+}
+
+/* Utility to apply primary/secondary colors via CSS variables when needed */
+.text-primary { color: var(--color-primary); }
+.bg-primary { background-color: var(--color-primary); }
+.text-secondary { color: var(--color-secondary); }
+.bg-secondary { background-color: var(--color-secondary); }
+.bg-neutral { background-color: var(--color-neutral); }
+
+/* Text color tokens for better typographic hierarchy */
+.text-foreground { color: var(--foreground); }
+.text-muted { color: #6b7280; } /* tailwind slate-500 */
+.text-subtle { color: #9aa3b2; } /* lighter muted */
+.border-muted { border-color: #e6eef7; }
+
+/* Heading helpers */
+.h1 { font-size: 1.875rem; line-height: 2.25rem; font-weight: 700; color: var(--color-primary); }
+.h2 { font-size: 1.25rem; line-height: 1.75rem; font-weight: 600; }
+.lead { font-size: 1.0625rem; color: #374151; }
+
+/* Soft shadow for cards */
+.shadow-soft { box-shadow: 0 6px 18px rgba(2,12,27,0.06); }
+
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
 }
