@@ -54,9 +54,15 @@ export default function TemplateGrid() {
         {items.map((t) => (
           <button key={t.id} onClick={() => setSelected(t)} className="text-left focus:outline-none">
             <Card className="relative overflow-hidden transition transform hover:scale-105">
-              <div className="aspect-[4/5] bg-slate-50 rounded overflow-hidden">
-                {/* use next/image for optimization but fall back if external */}
-                <img src={t.thumbnail} alt={t.title} className="w-full h-full object-cover" />
+              <div className="aspect-[4/5] bg-slate-50 rounded overflow-hidden relative">
+                {/* fixed aspect container ensures consistent card sizes; use next/image with fill */}
+                <Image
+                  src={t.thumbnail}
+                  alt={t.title}
+                  fill
+                  className="object-cover w-full h-full"
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 20vw"
+                />
               </div>
               <div className="absolute left-2 top-2 bg-white bg-opacity-80 px-2 py-1 rounded text-xs font-medium">{t.type}</div>
               <div className="absolute left-2 bottom-2 bg-white bg-opacity-80 px-2 py-1 rounded text-xs font-medium">{t.title}</div>
