@@ -1,0 +1,35 @@
+Buatkan saya website(Hanya Frontend) Penyedia Undangan Digital yg elegan, simple dan profesional menggunakan NextJS.
+
+Spesifikasi Projek:
+1. Menerapkan Best Practice dan Clean Architecture dan separation of concern
+2. Harus Scalable 
+3. Menggunakan App router
+4. Tidak menggunakan Typescript
+5. Lazy Loading dan menggunakan skeleton untuk item2 dinamis yg akan diload
+6. Komponen UI gunakan Shadcn UI secara selektif
+7. Untuk item2 yg dinamis siapkan logika fetching ke api dan mapping datanya ( untuk sementara pakai url placeholder/contoh dulu)
+8. Gunakan Animasi secara selektif sesuai kebutuhan
+
+Pallet Warna :
+Warna Primer (Primary Color): #013963
+Warna Sekunder (Secondary Color): #e6e68a
+Warna Netral (Neutral Color): #e6eef7 
+
+Layout di semua halaman :
+Navbar : Logo (placholder dulu), Home, Design/Template, Register, Login
+(Statis) footer: 2 section kiri-kanan agar nanti saya bisa menambahkan logo2 metode pembayaran dan informasi tentang kami
+
+Halaman dan Fitur : 
+1. Halaman Home dengan Konten 3 halaman kebawah =
+    a. (Statis) Landing Page Undangan digital, 2 section kanan-kiri (Kiri: Intro, Kanan: Placeholder image)
+    b. 3 Card untuk pilihan 3 tipe undangan ( title : basic, premium, ekslusif & dibawahnya ada 2 column 
+- (Dinamis) Icon ceklis hijau atau icon x merah, ini dinamis menyesuaikan boolean dari data spesifikasi tiap2 tipe undangan 
+- diisi text placeholder agar nanti saya bisa isi sendiri dengan text spesifikasi tiap jenis undangan )
+2.Halaman Design/Template isinya
+    a. (Statis) Hero Slogan "Preset Make easy, Tinggal Pakai langsung jadi!" 
+    b. (Statis) 2 card untuk foto marketing (pakai placeholder dulu)
+    c. filter atau grouping button dengan 4 jenis (semua, basic, premium, ekslusif)
+    d. (Dinamis) card dengan layout halaman grid 4 row dan column flexibel nanti menyesuaikan jumlah design(pakai placeholder dulu), agar nanti saya isi foto template/design undangan2 saya + tambahkan tempat tulisan di cardnya(pojok kiri-bawah) untuk nanti saya isi dengan berbagai title tipe undangan - dinamis
+3. Halaman Login 2 section kiri-kanan, kiri: foto placeholder (nanti diisi dengan foto pemanis) kanan: Form Login standar 
+4. Halaman Register sederhana
+
