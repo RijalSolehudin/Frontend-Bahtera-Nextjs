@@ -1,6 +1,6 @@
 export const plans = [
   {
-    id: 'basic',
+    id: '1',
     title: 'Basic',
     price: 'Free',
     specs: [
@@ -10,7 +10,7 @@ export const plans = [
     ]
   },
   {
-    id: 'premium',
+    id: '2',
     title: 'Premium',
     price: '$9.99',
     specs: [
@@ -20,7 +20,7 @@ export const plans = [
     ]
   },
   {
-    id: 'eksclusif',
+    id: '3',
     title: 'Eksklusif',
     price: '$29.99',
     specs: [

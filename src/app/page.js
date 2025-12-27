@@ -1,13 +1,14 @@
 import PlansList from '../components/plans/PlansList';
 import HeroCTAs from '../components/home/HeroCTAs';
+import Image from 'next/image';
 
 export default function Home() {
   return (
     <div className="space-y-12">
       {/* Landing */}
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-6 flex items-center justify-items-center">
         <div>
-<h1 className="h1 mb-3">Undangan Digital Elegan &amp; Simple</h1>
+          <h1 className="h1 mb-3">Undangan Digital Elegan &amp; Simple</h1>
           <p className="lead mb-4">
             Buat undangan digital profesional untuk acara Anda — gampang, cepat, dan terlihat
             elegan di semua perangkat.
@@ -16,7 +17,10 @@ export default function Home() {
             <HeroCTAs />
           </div>
         </div>
-        <div className="w-full h-64 rounded bg-slate-100 flex items-center justify-center">Placeholder Image</div>
+        <div className="w-1/2 h-full rounded-full bg-slate-100 flex items-center justify-center">
+          <Image src="/bridesT.png" alt="Hero" width={500} height={500} className="z-1" />
+          <Image src="/splash2T.png" alt="" width={500} height={500} className="absolute top-1/4 " />
+        </div>
       </section>
 
       {/* Plans */}
