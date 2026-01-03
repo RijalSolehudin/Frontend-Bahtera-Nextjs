@@ -3,15 +3,17 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 
+import { useAuth } from '@/context/AuthContext';
+
 
 const menuItems = [
     { href: '/', label: 'Home' },
     { href: '/design', label: 'Design/Template' },
-    { href: '/register', label: 'Register' },
-    { href: '/login', label: 'Login' },
 ];
 
 export default function MobileMenu({ isOpen, onClose }) {
+    const { user, logout } = useAuth();
+
     return (
         <AnimatePresence>
             {isOpen && (
@@ -58,6 +60,36 @@ export default function MobileMenu({ isOpen, onClose }) {
                                     {item.label}
                                 </Link>
                             ))}
+                            {user ? (
+                                <>
+                                    <div className="px-4 py-3 text-slate-700 font-medium border-t mt-2">
+                                        Hi, {user.name}
+                                    </div>
+                                    <button
+                                        onClick={() => { logout(); onClose(); }}
+                                        className="px-4 py-3 text-left rounded-md hover:bg-slate-50 text-red-600 transition-colors text-base font-medium"
+                                    >
+                                        Logout
+                                    </button>
+                                </>
+                            ) : (
+                                <>
+                                    <Link
+                                        href="/login"
+                                        onClick={onClose}
+                                        className="px-4 py-3 rounded-md hover:bg-slate-50 text-slate-700 hover:text-primary transition-colors text-base font-medium"
+                                    >
+                                        Login
+                                    </Link>
+                                    <Link
+                                        href="/register"
+                                        onClick={onClose}
+                                        className="px-4 py-3 rounded-md hover:bg-slate-50 text-slate-700 hover:text-primary transition-colors text-base font-medium"
+                                    >
+                                        Register
+                                    </Link>
+                                </>
+                            )}
                         </nav>
                     </motion.div>
                 </>
